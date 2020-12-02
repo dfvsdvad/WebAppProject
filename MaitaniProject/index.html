@@ -1,87 +1,89 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>トライデントOCアプリ</title>
-    <link rel="stylesheet" href="main.css">
-    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <meta charset="UTF-8">
+  <title>トライデントOCアプリ</title>
+  <link rel="stylesheet" href="main.css">
+  <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <div id="wrap">
-<header class="pfix">
- <nav class="nav" id="nav_f">
- <ul>
-<li><a href="OC_anke.html" class="list"><span style="border-bottom: solid 5px white;">アンケート入力画面</span></a></li>
-     <li><a href="bbb.html" class="list"><span style="border-bottom: solid 5px white;">【スタッフ用】混雑状況入力</span></a></li>
+  <header class="pfix">
+    <nav class="nav" id="nav_f">
+      <ul>
+        <li><a href="OC_anke.html" class="list"><span style="border-bottom: solid 5px white;">アンケート入力画面</span></a></li>
+        <li><a href="bbb.html" class="list"><span style="border-bottom: solid 5px white;">【スタッフ用】混雑状況入力</span></a></li>
 
-</ul>
-</nav>
- <div id="target">
-    <div class="target_inner">
-    <span class="target_inner_line target_inner_1" id="line1"></span>
-    <span class="target_inner_line target_inner_2" id="line2"></span>
-    <span class="target_inner_line target_inner_3" id="line3"></span>
+      </ul>
+    </nav>
+    <div id="target">
+      <div class="target_inner">
+        <span class="target_inner_line target_inner_1" id="line1"></span>
+        <span class="target_inner_line target_inner_2" id="line2"></span>
+        <span class="target_inner_line target_inner_3" id="line3"></span>
+      </div>
     </div>
-</div>
 
-     <h1 id="t">トライデントオープンキャンパスアプリ</h1>
+    <h1 id="t">トライデントオープンキャンパスアプリ</h1>
 
-</header>
+  </header>
 
 </div>
 
 <body>
 
 
-<table border = 1 id="table1">
+  <table border=1 id="table1">
     <tr>
-        <td id="td1">混雑</td>
-        <td style="font-size: 20px;">他の学科から回ることを推奨します</td>
+      <td id="td1">混雑</td>
+      <td style="font-size: 20px;">他の学科から回ることを推奨します</td>
     </tr>
 
-     <tr>
-        <td id="td2">普通</td>
-        <td style="font-size: 20px">場合によっては混雑するかもしれません</td>
+    <tr>
+      <td id="td2">普通</td>
+      <td style="font-size: 20px">場合によっては混雑するかもしれません</td>
     </tr>
 
-     <tr>
-        <td id="td3">空き</td>
-        <td style="font-size: 20px">空いています</td>
+    <tr>
+      <td id="td3">空き</td>
+      <td style="font-size: 20px">空いています</td>
     </tr>
 
-</table>
+  </table>
 
-<div id="trident_map">
-    <b><p style="text-align: center;">学科をタップすると各学科の説明が表示されます</p></b>
-  <label for="button6f">6F   </label><button id="button6f">CGスペシャリスト学科</button><br>
-   <label for="button5f">5F   </label><button id="button5f">WEBデザイン学科</button><br>
-   <label for="button4f">4F   </label><button id="button4f">CAD学科</button>
-   <button id="button4f2">情報系学科</button><br>
-   <label for="button3f">3F   </label><button id="button3f">ゲームサイエンス学科</button>
-</div>
+  <div id="trident_map">
+    <b>
+      <p style="text-align: center;">学科をタップすると各学科の説明が表示されます</p>
+    </b>
+    <label for="button6f">6F </label><button id="button6f">CGスペシャリスト学科</button><br>
+    <label for="button5f">5F </label><button id="button5f">WEBデザイン学科</button><br>
+    <label for="button4f">4F </label>
+    <button id="button4f">CAD学科</button>
+    <button id="button4f2">情報系学科</button><br>
+    <label for="button3f">3F </label><button id="button3f">ゲームサイエンス学科</button>
+  </div>
 
-<script>
-function hamburger() {
-document.getElementById('line1').classList.toggle('linea');
-document.getElementById('line2').classList.toggle('lineb');
-document.getElementById('line3').classList.toggle('linec');
-document.getElementById('target').classList.toggle('slidex');
-document.getElementById('nav_f').classList.toggle('fadein');
-}
+  <script>
+    function hamburger() {
+      document.getElementById('line1').classList.toggle('linea');
+      document.getElementById('line2').classList.toggle('lineb');
+      document.getElementById('line3').classList.toggle('linec');
+      document.getElementById('target').classList.toggle('slidex');
+      document.getElementById('nav_f').classList.toggle('fadein');
+    }
 
-document.getElementById('target').addEventListener('click', function () {
-hamburger();
-});
-
-let list = document.getElementsByClassName('list');
-
-for (let i = 0; i < list.length; i++) {
-list[i].addEventListener('click', function () {
-hamburger();
+    document.getElementById('target').addEventListener('click', function() {
+      hamburger();
     });
-}
-</script>
 
-</body>
-</html>
+    let list = document.getElementsByClassName('list');
+
+    for (let i = 0; i < list.length; i++) {
+      list[i].addEventListener('click', function() {
+        hamburger();
+      });
+    }
+  </script>
+
+</body></html>
