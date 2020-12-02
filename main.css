@@ -1,5 +1,6 @@
 html{
-    height: 90%;
+    height: 100%;
+
 }
 body{
     background-color: aliceblue;
@@ -40,16 +41,18 @@ header {
 }
 #trident_map{
     width: 600px;
+    height: 85%;
     padding: 20px;
-   margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border: 10px solid #000000;
     background-color: #ffffe0;
 }
 
 #button3f,#button4f,#button4f2,#button5f,#button6f{
-
+  height: 20%;
+  font-size: 20%;
   margin-top: 10px;
   font-size: 1.6rem;
   font-weight: 700;
@@ -106,13 +109,15 @@ h2{
 /* nav_menu */
 .nav{
     position: absolute;
-    height: 100vh;
-    width: 100%;
-    left: -100%;
+    height: 100%;
+    width: 70%;
+    left: -70%;
     background: rgba(99, 99, 99,.95);
-    -webkit-transition: 1.5s;
+    -webkit-transition: 1.0s;
     transition: 1
-        1.5s;
+        0.2s;
+    z-index: 9998;
+
 }
 
 ul{
@@ -145,6 +150,7 @@ a{
     display: block;
     -webkit-transition: 1.5s;
     transition: 1.5s;
+    z-index: 9999;
 }
 
 .target_inner{
@@ -210,3 +216,14 @@ main section{
     text-align: center;
     line-height: 100vh;
 }
+
+
+
+
+
+
+
+
+
+
+
