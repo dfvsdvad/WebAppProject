@@ -13,7 +13,7 @@
 <body>
 
 
-  <select name=”subject”>
+  <select name=”subject” id="subject">
     <option value=”it”>IT</option>
     <option value=”cg”>CG</option>
     <option value=”mar”>CAD</option>
@@ -54,14 +54,16 @@
 
 
 
+
+
     clickListener = function(e) {
+      var select = document.getElementById('subject');
 
 
-      console.log();
-      console.log("statusChange");
-      docRef.set({
-        it: e.target.innerHTML
 
+      console.log("statusChange...");
+      docRef.update({
+        [select.value]: e.target.innerHTML
       }).then(function() {
         console.log("SUCCESS!");
       }).catch(function(error) {
@@ -74,14 +76,7 @@
     komi.addEventListener("click", clickListener);
     hutuu.addEventListener("click", clickListener);
     suki.addEventListener("click", clickListener);
-
   </script>
 
 
-</body>
-
-
-
-
-
-</html>
+</body></html>
