@@ -17,8 +17,9 @@
   <select name=”subject” id="subject">
     <option value=”it”>IT</option>
     <option value=”cg”>CG</option>
-    <option value=”mar”>CAD</option>
+    <option value=”cad”>CAD</option>
     <option value=”game”>GAME</option>
+    <option value=”web”>WEB</option>
   </select>
 
   <button id="komi">混んでる</button>
@@ -48,6 +49,8 @@
     var firestore = firebase.firestore();
 
     const docRef = firestore.doc("subject/status");
+
+
 
     const komi = document.querySelector("#komi");
     const hutuu = document.querySelector("#hutuu");
