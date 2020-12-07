@@ -63,12 +63,25 @@
     <b>
       <p style="text-align: center;">学科をタップすると各学科の説明が表示されます</p>
     </b>
-    <label for="button6f">6F </label><button id="button6f" class="subject">CGスペシャリスト学科</button><br>
-    <label for="button5f">5F </label><button id="button5f" class="subject">WEBデザイン学科</button><br>
-    <label for="button4f">4F </label>
-    <button id="button4f"  class="subject">F44<br>CAD学科</button>
-    <button id="button4f2"  class="subject">情報系学科</button><br>
-    <label for="button3f">3F </label><button id="button3f" class="subject">ゲームサイエンス学科</button>
+
+    <div class="floor">
+    <label for="web">7F </label><button id="web" class="subject">WEBデザイン学科</button>
+    </div>
+
+    <div class="floor">
+    <label for="game">5F </label><button id="game" class="subject">ゲームサイエンス学科</button>
+    <button id="vr" class="subject">VRゲーム・Vtuber体験</button>
+    </div>
+
+    <div class="floor">
+    <label for="it">4F </label>
+    <button id="it"  class="subject">F44<br>情報系学科</button>
+    <button id="cad"  class="subject">CAD学科</button><br>
+    </div>
+
+    <div class="floor">
+    <label for="cg">B1F </label><button id="cg" class="subject">CGスペシャリスト学科</button>
+    </div>
   </div>
 
   <script>
@@ -115,13 +128,27 @@
 
     const docRef = firestore.doc("subject/status");
 
-    const f6 = document.querySelector("#button6f");
-    console.log(f6.value);
-    const f5 = document.querySelector("#button5f");
+    const f7 = document.querySelector("#web");
+    console.log(f7.value);
+    const f5a = document.querySelector("#game");
+    console.log(f5a.value);
+    const f5b = document.querySelector("#vr");
+    console.log(f5b.value);
+    const f4a = document.querySelector("#it");
+    console.log(f4a.value);
+    const f4b = document.querySelector("#cad");
+    console.log(f4b.value);
+    const fb1 = document.querySelector("#cg");
+    console.log(fb1.value);
+
 
     var data = {
-      cg: f6,
-      web: f5
+      web: f7,
+      game: f5a,
+      vr:f5b,
+     it:f4a,
+     cad:f4b,
+     cg:fb1
     };
     getRealtimeUpdates = function() {
       docRef.onSnapshot(function(doc) {
@@ -133,13 +160,13 @@
             var color;
             switch (zyoutai) {
               case "混んでる":
-                color = "red";
+                color = "#ff9e9e";
                 break;
               case "通常":
-                color = "yellow";
+                color = "#ffff9e";
                 break;
               case "空いてる":
-                color = "blue";
+                color = "#9eceff";
                 break;
             }
             data[key].style.background = color;

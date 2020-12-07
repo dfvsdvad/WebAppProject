@@ -28,7 +28,7 @@ body{
      text-align: center;
 }
 #table1{
-    width: 50%;
+    width: 70%;
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
@@ -41,7 +41,7 @@ header {
 
 }
 #trident_map{
-    width: 600px;
+    width: 80%;
     height: auto;
     padding: 20px;
     margin-left: auto;
@@ -51,7 +51,8 @@ header {
     background-color: #ffffe0;
 }
 
-#button3f,#button4f,#button4f2,#button5f,#button6f{
+.subject{
+  width: 100%;
   height: 250px;
   font-size: 20%;
   margin-top: 2%;
@@ -72,12 +73,15 @@ header {
   border-radius: 0.5rem;
   background-color: #9eceff;
 }
-#button3f,#button5f,#button6f{
-    width: 560px;
+.floor{
+  display: flex;
+  margin-bottom: 30px;
+    font-size: 25px;
+
 }
-#button4f,#button4f2{
-    width:280px;
-}
+
+
+
 
 #t{
     margin-left: auto;
