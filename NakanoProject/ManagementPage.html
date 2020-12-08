@@ -4,10 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>込み具合管理画面</title>
-
-  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+  <script type="text/javascript" src="../firebaseImport.js"></script>
 </head>
 
 <body>
@@ -31,47 +28,27 @@
   <script>
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: "AIzaSyC8BVU_scpA1VsmQ8q7dtUvCmyzV9DkWBw",
-      authDomain: "stone-citizen-293007.firebaseapp.com",
-      databaseURL: "https://stone-citizen-293007.firebaseio.com",
-      projectId: "stone-citizen-293007",
-      storageBucket: "stone-citizen-293007.appspot.com",
-      messagingSenderId: "30711139915",
-      appId: "1:30711139915:web:87c02d9086eba140e207ce",
-      measurementId: "G-P1TFK1KKEN"
-    };
 
-    // ファイアベースをイニシャライズ
-    firebase.initializeApp(firebaseConfig);
 
+    firebase.initializeApp(firebaseConfig); // ファイアベースをイニシャライズ
 
     var firestore = firebase.firestore();
 
     const docRef = firestore.doc("subject/status");
 
-
-
     const komi = document.querySelector("#komi");
     const hutuu = document.querySelector("#hutuu");
     const suki = document.querySelector("#suki");
 
-
-
-
-
     clickListener = function(e) {
-      var select = document.getElementById('subject');
-
-
-
+      var select = document.getElementById('subject');//選択されている学科
       console.log("statusChange...");
       docRef.update({
-        [select.value]: e.target.innerHTML
+        [select.value]: e.target.innerHTML//学科:込み具合
       }).then(function() {
         console.log("SUCCESS!");
       }).catch(function(error) {
-        console.log("ERROR: :", error);
+        console.log("ERROR... :", error);
       });
     };
 
@@ -83,7 +60,6 @@
     suki.addEventListener("click", clickListener);
 
   </script>
-
 
 </body>
 
