@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="mapPage.css">
   <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+  <script type="text/javascript" src="../firebaseImport.js"></script>
 </head>
 
 
@@ -19,7 +17,7 @@
     <nav class="nav" id="nav_f">
       <ul>
         <li><a href="OC_anke.html" class="list"><span style="border-bottom: solid 5px white;">アンケート入力画面</span></a></li>
-        <li><a href="../NakanoProject/input.html" class="list"><span style="border-bottom: solid 5px white;">【スタッフ用】混雑状況入力</span></a></li>
+        <li><a href="../NakanoProject/ManagementPage.html" class="list"><span style="border-bottom: solid 5px white;">【スタッフ用】混雑状況入力</span></a></li>
 
       </ul>
     </nav>
@@ -92,6 +90,9 @@
       document.getElementById('target').classList.toggle('slidex');
       document.getElementById('nav_f').classList.toggle('fadein');
     }
+
+
+    console.log(document.getElementById('td1').style.color);
 
     document.getElementById('target').addEventListener('click', function() {
       hamburger();
