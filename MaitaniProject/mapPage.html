@@ -162,12 +162,13 @@
      cad:f4b,
      cg:fb1
     };
+
     getRealtimeUpdates = function() {
       docRef.onSnapshot(function(doc) {
         if (doc && doc.exists) {
           const myData = doc.data();
           for (var key in data) {
-            var zyoutai = myData["”" + key + "”"];
+            var zyoutai = myData["”" + key + "”"];//クラウドのデータ抽出
             console.log(zyoutai);
             var color;
             switch (zyoutai) {
