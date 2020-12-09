@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>込み具合管理画面</title>
+  <title>混み具合管理画面</title>
   <!--firebaseに必要なスクリプトの読み込みとイニシャライズ  -->
   <script type="text/javascript" src="../firebaseImport.js"></script>
 </head>
@@ -20,8 +20,8 @@
     <option value=”web”>WEB</option>
   </select>
 
-  <button id="komi">混んでる</button>
-  <button id="hutuu">通常</button>
+  <button id="high">混んでる</button>
+  <button id="middle">通常</button>
   <button id="suki">空いてる</button>
   <p id="status">現在の状態: </p>
 
@@ -37,8 +37,8 @@
 
     const docRef = firestore.doc("subject/status");
 
-    const komi = document.querySelector("#komi");
-    const hutuu = document.querySelector("#hutuu");
+    const high = document.querySelector("#high");
+    const middle = document.querySelector("#middle");
     const suki = document.querySelector("#suki");
 
     clickListener = function(e) {
@@ -56,8 +56,8 @@
 
     // saveButtonボタンが押されたら実行する処理
 
-    komi.addEventListener("click", clickListener);
-    hutuu.addEventListener("click", clickListener);
+    high.addEventListener("click", clickListener);
+    middle.addEventListener("click", clickListener);
     suki.addEventListener("click", clickListener);
 
   </script>

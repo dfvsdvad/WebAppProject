@@ -239,9 +239,12 @@ main section {
     margin: auto;
 }
 
-.container,
+.container_web,
 .container_game,
-.container_vr{
+.container_vr,
+.container_it,
+.container_cad,
+.container_cg{
     display: none;
     position: fixed;
     top: 0;
@@ -295,7 +298,7 @@ main section {
     box-sizing: border-box;
 }
 
-#web_picture,#game_picture,#vr_picture {
+.picture{
     width: 20%;
     height: 20%;
 }
