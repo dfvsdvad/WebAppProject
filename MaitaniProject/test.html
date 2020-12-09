@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <title>トライデントOCアプリ</title>
     <link rel="stylesheet" href="mapPage.css">
-    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+    <meta name="viewport" content="width=960">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+    <script type="text/javascript" src="../firebaseImport.js"></script>
 </head>
 
 
@@ -86,6 +84,78 @@
         </div>
     </div>
 
+    <!--  学科紹介のダイアログ-->
+    <div class="container">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <img src="image/patora4.jpg" alt="画像" id="web_picture">
+
+            <h3>講座①自分だけのWebサイトを作ろう</h3>
+            <p>Webサイトの仕組みを学びながら、スマートフォンにも対応した簡単なページを作ってみよう！<br>スタッフが優しく丁寧に教えてくれるので安心です！</p>
+
+            <h3>講座②最新のWeb技術を体験しよう</h3>
+            <p>3DやVRや音声認識など、最新技術を使ったWebサイトやゲームを体験できます！<br>友達と競い合って、楽しくWebの世界を覗いてみよう！</p>
+
+            <h3>講座③オリジナルのロゴマークをデザインしよう</h3>
+            <p>プロも使用するソフトを使ってロゴマークを作ってみよう！<br>デザインが苦手でも楽しく体験できます！</p>
+
+            <button class="close">CLOSE</button>
+        </div>
+    </div>
+
+
+    <div class="container_game">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <img src="image/patora2.jpg" alt="画像" id="game_picture">
+
+            <h3>講座①必殺技を作ろう「格闘ゲーム」</h3>
+            <p>放て！必殺技！自分だけのコマンドパターンを考えて、オリジナル必殺技を作って遊ぼう。</p>
+
+            <h3>講座②プロと同じ開発環境を使ってみよう！</h3>
+            <p>ニンテンドー3DSのゲームを開発してみよう。<br>
+                どんなゲームができるかはお楽しみ...</p>
+
+            <h3>講座③あなたもつくろうスマートフォンゲーム</h3>
+            <p>スマートフォンのゲームはどうやって創られているんだろう？<br>
+                疑問に思ったらLet's Challenge!!</p>
+
+            <h3>講座④ツクッて遊ぼう「オリジナルRPG」</h3>
+            <p>さあ、今年もキミだけのオリジナルＲＰＧをツクろう！<br>
+                できあがったゲームデータはキミのもの。<br>
+                持参すれば続きから作成できるぞ!!</p>
+
+            <h3>講座⑤学生制作ゲーム「試遊コーナー」</h3>
+            <p>卒業生・在校生が制作したゲー ムで遊ぼう!!<br>
+                コンテスト受賞作品をはじめ学生が制作したゲームを試遊できるよ。</p>
+
+
+
+            <button class="close">CLOSE</button>
+        </div>
+    </div>
+
+    <div class="container_vr">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <img src="image/patora10.jpg" alt="画像" id="vr_picture">
+
+            <h3>講座①VRゲーム体験</h3>
+            <p>360度全方向を取り囲むゲームの世界を体験しよう！<br>
+                バーチャルキャスト(<a href="https://virtualcast.jp" style="color: blue;display: inline">https://virtualcast.jp</a>)を 使ったVtuber体験もできるよ。</p>
+
+
+
+            <button class="close">CLOSE</button>
+        </div>
+    </div>
+
+
+
+
 
     <script>
         function hamburger() {
@@ -107,7 +177,6 @@
                 hamburger();
             });
         }
-
     </script>
 
 
@@ -183,27 +252,53 @@
 
         getRealtimeUpdates();
 
-        var modal = document.getElementById('modal');
+        jQuery(function() {
+            var container = $('.container'),
+                container_game = $('.container_game'),
+                container_vr = $('.container_vr'),
+                overlay = $('.overlay'),
+                close = $('.close');
 
-        f7.addEventListener('click', function() {
-                    modal.style.display = 'block';
-                }
-                            )
+            const f7 = document.querySelector("#web");
+            const f5a = document.querySelector("#game");
 
-                var closeBtn = document.getElementById('closeBtn');
+            const f5b = document.querySelector("#vr");
 
-                closeBtn.addEventListener('click', function() {
-                    modal.style.display = 'none';
-                })
+            const f4a = document.querySelector("#it");
 
-                window.addEventListener('click', function(e) {
-                    if (e.target == modal) {
-                        modal.style.display = 'none';
-                    }
-                });
+            const f4b = document.querySelector("#cad");
 
+            const fb1 = document.querySelector("#cg");
+
+
+
+
+            document.getElementById("web").onclick = function() {
+                container.fadeIn();
+            };
+
+            document.getElementById("game").onclick = function() {
+                container_game.fadeIn();
+            };
+
+            document.getElementById("vr").onclick = function() {
+                container_vr.fadeIn();
+            };
+
+            //CLOSEをクリックでモーダルを閉じる
+            close.on('click', function() {
+                container.fadeOut();
+                container_game.fadeOut();
+                 container_vr.fadeOut();
+            });
+
+            //モーダルの周りをクリックで閉じる
+            overlay.on('click', function() {
+                container.fadeOut();
+                container_game.fadeOut();
+                 container_vr.fadeOut();
+            });
+        });
     </script>
 
-</body>
-
-</html>
+</body></html>
