@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>個人情報の保護に関する事項</title>
 </head>
 <body>
+
+  <header>
    <h1>個人情報の保護に関する事項</h1>
+   </header>
 
    <p>学校法人 河合塾学園 トライデントコンピュータ専門学校は、体験イベントへのお申し込み時、およびご参加時にご提供いただく個人情報を厳重に取り扱い、適正な個人情報の管理を実施します。</p>
 
@@ -38,6 +42,43 @@
     <h2>8.個人情報の取り扱いに関するお問い合わせ先</h2>
     <p>学校法人 河合塾学園 トライデントコンピュータ専門学校<br>電話番号:052-581-0581  E-mail:tcc-info@kawai-juku.ac.jp<br>(受付時間 9:00-18:00 土日祝・年末年始は受付を行いません。)<br>※お問い合わせの際にいただく個人情報は、お問い合わせの対応にのみ利用いたします。<br>※正確な応対と応対品質向上のため、通話内容を録音させていただいております。</p>
 
-    <a href="OC_anke2.php">アンケートに答える</a>
+    <a href="OC_anke2.php" id="link">アンケートに答える</a>
+
+    <style>
+    body{
+    background-color: aliceblue;
+    height:90%;
+    }
+
+
+    header {
+  padding:10px;
+  background: skyblue;
+
+}
+
+        h2{
+            color:#0000cd;
+        }
+
+#link{
+
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #0000cd;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #6666ff;    /* 枠の指定 */
+        }
+
+        }
+
+    </style>
 </body>
 </html>

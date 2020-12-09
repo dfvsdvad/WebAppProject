@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
-  <meta charset=UTF-8>
-  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+  <title>込み具合管理画面</title>
+  <!--firebaseに必要なスクリプトの読み込みとイニシャライズ  -->
+  <script type="text/javascript" src="../firebaseImport.js"></script>
 </head>
 
 <body>
@@ -16,8 +14,10 @@
   <select name=”subject” id="subject">
     <option value=”it”>IT</option>
     <option value=”cg”>CG</option>
-    <option value=”mar”>CAD</option>
+    <option value=”cad”>CAD</option>
     <option value=”game”>GAME</option>
+    <option value=”vr”>VR・Vtuber</option>
+    <option value=”web”>WEB</option>
   </select>
 
   <button id="komi">混んでる</button>
@@ -29,20 +29,9 @@
   <script>
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: "AIzaSyC8BVU_scpA1VsmQ8q7dtUvCmyzV9DkWBw",
-      authDomain: "stone-citizen-293007.firebaseapp.com",
-      databaseURL: "https://stone-citizen-293007.firebaseio.com",
-      projectId: "stone-citizen-293007",
-      storageBucket: "stone-citizen-293007.appspot.com",
-      messagingSenderId: "30711139915",
-      appId: "1:30711139915:web:87c02d9086eba140e207ce",
-      measurementId: "G-P1TFK1KKEN"
-    };
 
-    // ファイアベースをイニシャライズ
-    firebase.initializeApp(firebaseConfig);
 
+    firebase.initializeApp(firebaseConfig); // ファイアベースをイニシャライズ
 
     var firestore = firebase.firestore();
 
@@ -52,31 +41,27 @@
     const hutuu = document.querySelector("#hutuu");
     const suki = document.querySelector("#suki");
 
-
-
-
-
     clickListener = function(e) {
-      var select = document.getElementById('subject');
-
-
-
+      var select = document.getElementById('subject');//選択されている学科
       console.log("statusChange...");
       docRef.update({
-        [select.value]: e.target.innerHTML
+        [select.value]: e.target.innerHTML//学科:込み具合
       }).then(function() {
         console.log("SUCCESS!");
       }).catch(function(error) {
-        console.log("ERROR: :", error);
+        console.log("ERROR... :", error);
       });
     };
 
 
     // saveButtonボタンが押されたら実行する処理
+
     komi.addEventListener("click", clickListener);
     hutuu.addEventListener("click", clickListener);
     suki.addEventListener("click", clickListener);
+
   </script>
 
+</body>
 
-</body></html>
+</html>
