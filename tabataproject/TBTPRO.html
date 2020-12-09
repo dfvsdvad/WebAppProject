@@ -8,13 +8,54 @@
 </head>
 
 <body>
-<!-- No spacing due to whitespace bug in Chrome. -->
-<div class="card">
-  <label class="radio"><input id="radio1" type="radio" name="radios" checked><span class="outer"><span class="inner"></span></span>Robert Baratheon</label>
-  <label class="radio"><input id="radio2" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>Rhaegar Targaryen</label>
-  <label class="radio"><input id="radio3" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>Lyanna Stark</label>
-  <label class="radio"><input id="radio4" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>Tywin Lannister</label>
-  <label class="radio"><input id="radio5" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>Jon Arryn</label>
-</div>
+    <form>
+        <fieldset>
+            <legend>Choose your interests</legend>
+            <div>
+                <input type="checkbox" id="coding" name="interest" value="coding">
+                <label for="coding">Coding</label>
+            </div>
+            <div>
+                <input type="checkbox" id="music" name="interest" value="music">
+                <label for="music">Music</label>
+            </div>
+            <div>
+                <input type="checkbox" id="art" name="interest" value="art">
+                <label for="art">Art</label>
+            </div>
+            <div>
+                <input type="checkbox" id="sports" name="interest" value="sports">
+                <label for="sports">Sports</label>
+            </div>
+            <div>
+                <input type="checkbox" id="cooking" name="interest" value="cooking">
+                <label for="cooking">Cooking</label>
+            </div>
+            <div>
+                <input type="checkbox" id="other" name="interest" value="other">
+                <label for="other">その他</label>
+                <input type="text" id="otherValue" name="other">
+                <script>
+                    var otherCheckbox = document.querySelector('input[value="other"]');
+                    var otherText = document.querySelector('input[id="otherValue"]');
+                    otherText.style.visibility = 'hidden';
+
+                    otherCheckbox.addEventListener('change', () => {
+                        if (otherCheckbox.checked) {
+                            otherText.style.visibility = 'visible';
+                            otherText.value = '';
+                        } else {
+                            otherText.style.visibility = 'hidden';
+                        }
+                    });
+
+                </script>
+            </div>
+            <div>
+                <button type="submit">Submit form</button>
+            </div>
+        </fieldset>
+    </form>
 </body>
+
 </html>
