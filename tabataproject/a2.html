@@ -25,10 +25,8 @@
             <p class="cen">郵便番号：<input type="text" name="entry.530668767"></p>
             <p class="cen">住所：<textarea cols="50" rows="5" name="entry.133107222"></textarea></p>
         </div>
-        <div class="title1">
-            <p>参加した講座にチェックを入れてください</p>
-        </div>
-        <div class="box1">
+        <div class="box2">
+            <span class="box-title">参加した講座にチェックを入れてください</span>
             <div class="mozi">
                 <p>ゲーム開発 </p>
                 <input type="checkbox" id="03-A" name="checkbox03">
@@ -92,12 +90,12 @@
 
 
 
+        <div class="box2">
+            <span class="box-title">
+                Bその他参加したイベントがあれば、チェックを入れてください。
+            </span>
 
-        <div class="title1">
-            <p>Bその他参加したイベントがあれば、チェックを入れてください。</p>
-        </div>
 
-        <div class="box1">
             <input type="checkbox" id="B1" name="checkbox03">
             <label for="B1" class="checkbox03">スペシャル講座<br></label>
             <input type="checkbox" id="B2" name="checkbox03">
@@ -111,11 +109,11 @@
             <input type="checkbox" id="C1" name="checkbox03">
             <label for="B6" class="checkbox03">就職情報センター<br></label>
         </div>
+        <div class="box2">
+            <span class="box-title">
+                <p>C一番印象に残った講座と感想をお聞かせください。</p>
+            </span>
 
-        <div class="title1">
-            <p>C一番印象に残った講座と感想をお聞かせください。</p>
-        </div>
-        <div class="box1">
             <select name="kouza">
                 <option value="">コース</option>
                 <option value="ゲーム開発">ゲーム開発</option>
@@ -179,13 +177,14 @@
                 };
 
             </script>
+            <br>
+            感想をお聞かせください。<textarea cols="50" rows="5" name="entry.133107222"></textarea>
         </div>
+        <div class="box2">
+            <span class="box-title">
+                <p>D.トライデントをはじめに知ったきっかけは？</p>
+            </span>
 
-        <p class="box1">感想をお聞かせください。<textarea cols="50" rows="5" name="entry.133107222"></textarea></p>
-        <div class="title1">
-            <p>D.トライデントをはじめに知ったきっかけは？</p>
-        </div>
-        <div class="box1">
             <select name="sinro">
                 <option value="">選択</option>
                 <option value="紹介">紹介</option>
@@ -244,10 +243,11 @@
 
             </script>
         </div>
-        <div class="title1">
-            <p>E,本日のオープンキャンパスにご参加のきっかけは何ですか（複数回答可）</p>
-        </div>
-        <div class="box1">
+        <div class="box2">
+            <span class="box-title">
+                <p>E.本日のオープンキャンパスにご参加のきっかけは何ですか（複数回答可）</p>
+            </span>
+
             <p class="cen">イベント内容</p>
             <input type="checkbox" id="C0" name="checkbox03">
             <label for="C0" class="checkbox03">前回のイベントが楽しかった<br></label>
@@ -281,30 +281,31 @@
             <input type="checkbox" id="C14" name="checkbox03">
             <label for="C14" class="checkbox03">その他<br></label>
         </div>
-        <div class="title1">
-            <p>F.検討中の進路は何ですか？</p>
+        <div class="box2">
+            <span class="box-title">
+                <p>F.検討中の進路は何ですか？</p>
+            </span>
+            <div class="radio">
+                <input id="radio-1" name="radio" type="radio">
+                <label for="radio-1" class="radio-label">コンピュータ専門学校</label>
+                <input id="radio-2" name="radio" type="radio">
+                <label for="radio-2" class="radio-label">その他の分野の専門学校</label>
+                <input id="radio-3" name="radio" type="radio">
+                <label for="radio-3" class="radio-label">就職</label>
+                <input id="radio-4" name="radio" type="radio">
+                <label for="radio-4" class="radio-label">大学</label>
+                <input id="radio-5" name="radio" type="radio">
+                <label for="radio-5" class="radio-label">短大</label>
+                <input id="radio-6" name="radio" type="radio">
+                <label for="radio-6" class="radio-label">その他</label>
+            </div>
         </div>
-        <div class="box1">
-            <label class="radio" for="radio-1"><input id="radio1" type="radio" name="radios"><span class="outer">
-                    <span class="inner"></span></span>コンピュータ専門学校</label>
-            <label class="radio" for="radio-2"><input id="radio2" type="radio" name="radios"><span class="outer">
-                    <span class="inner"></span></span>その他の分野の専門学校</label>
-            <label class="radio" for="radio-3"><input id="radio3" type="radio" name="radios"><span class="outer">
-                    <span class="inner"></span></span>就職</label>
-            <label class="radio" for="radio-4"><input id="radio4" type="radio" name="radios"><span class="outer">
-                    <span class="inner"></span></span>大学</label>
-            <label class="radio" for="radio-5"><input id="radio5" type="radio" name="radios"><span class="outer">
-                    <span class="inner"></span></span>短大</label>
-            <label class="radio" for="radio-6"><input id="radio6" type="radio" name="radios"><span class="outer">
-                    <span class="inner"></span></span>その他</label>
-
-        </div>
 
 
-        <div class="title1">
-            <p>G.本校以外に参加予定または、参加したことがある学校があれば、記入してください</p>
-        </div>
-        <div class="box1">
+        <div class="box2">
+            <span class="box-title">
+                <p>G.本校以外に参加予定または、参加したことがある学校があれば、記入してください</p>
+            </span>
             <textarea cols="50" rows="5" name="entry.133107222"></textarea>
             <textarea cols="50" rows="5" name="entry.133107222"></textarea>
             <textarea cols="50" rows="5" name="entry.133107222"></textarea>
