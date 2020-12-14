@@ -6,6 +6,29 @@
     line-height: 3;
     background: whitesmoke;
 }
+.box2 {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px black;
+    background-color: whitesmoke
+}
+.box2 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: whitesmoke;
+    color: black;
+    font-weight: bold;
+}
+.box2 p {
+    margin: 0;
+    padding: 0;
+}
 .title1{
     padding: 0.5em 1em;
     margin: 2em 0;
