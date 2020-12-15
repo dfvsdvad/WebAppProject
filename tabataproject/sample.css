@@ -31,7 +31,10 @@
 .box2 p {
     margin: 0;
     padding: 0;
+    text-align: left
 }
+
+
 
 .title1 {
     padding: 0.5em 1em;
@@ -50,7 +53,28 @@
     font-weight: bold;
 }
 
-/* チェックボックス03 */
+.D {
+    font-weight: bold;
+}
+
+.same-width-list {
+    width: 200px;
+    height: 35px;
+}
+
+.same-width-list2 {
+    width: 350px;
+    height: 35px;
+}
+
+.kansou {
+    width: 550px;
+    height: 25px;
+}
+
+
+
+/* チェックボックス */
 input[type=checkbox] {
     display: none;
 }
@@ -103,6 +127,8 @@ input[type=checkbox]:checked + .checkbox03::after {
     transform: rotate(45deg) scale3d(1, 1, 1);
 }
 
+/*ラジオボタン*/
+
 .radio {
     margin: 0.5rem;
 }
@@ -114,7 +140,7 @@ input[type=checkbox]:checked + .checkbox03::after {
 
 .radio input[type="radio"] + .radio-label:before {
     content: '';
-    background: #f4f4f4;
+    background: white;
     border-radius: 100%;
     border: 1px solid #b4b4b4;
     display: inline-block;
@@ -143,7 +169,7 @@ input[type=checkbox]:checked + .checkbox03::after {
 .radio input[type="radio"]:disabled + .radio-label:before {
     box-shadow: inset 0 0 0 4px #f4f4f4;
     border-color: #b4b4b4;
-    background: #b4b4b4;
+    background: white;
 }
 
 .radio input[type="radio"] + .radio-label:empty:before {
