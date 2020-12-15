@@ -62,7 +62,7 @@ header {
     height: 250px;
     font-size: 20%;
     margin-top: 2%;
-    font-size: 2.1rem;
+    font-size: 1.7rem;
     font-weight: 700;
     line-height: 1.5;
     position: relative;
@@ -78,6 +78,37 @@ header {
     color: #212529;
     border-radius: 0.5rem;
     background-color: #9eceff;
+
+}
+
+.subject .haguruma {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /*以下装飾*/
+    margin: 0;
+    /*余計な隙間を除く*/
+    font-size: 20px;
+    /*文字サイズ*/
+
+    padding: 7px;
+    /*文字と線の間の余白*/
+    color: white;
+    /*文字色*/
+    text-decoration: none;
+    /*下線を表示させない*/
+    width: 50px;
+    height: 50px;
+
+}
+
+.divbutton #high {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .floor {
@@ -244,13 +275,13 @@ main section {
 .container_vr,
 .container_it,
 .container_cad,
-.container_cg{
+.container_cg {
     display: none;
     position: fixed;
     top: 0;
     left: 50%;
     width: 1000px;
-    height:auto;
+    height: auto;
     margin-left: -500px;
     margin-top: auto;
 
@@ -258,7 +289,7 @@ main section {
     vertical-align: middle;
 
     overflow: auto;
-    overflow-y:scroll;
+    overflow-y: scroll;
     height: 100vh;
 
 
@@ -268,13 +299,15 @@ main section {
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
 }
-.content > h3{
+
+.content > h3 {
     font-size: 32px;
-    -webkit-text-size-adjust:100%;
+    -webkit-text-size-adjust: 100%;
 }
-.content > p{
+
+.content > p {
     font-size: 27px;
-    -webkit-text-size-adjust:100%;
+    -webkit-text-size-adjust: 100%;
 
 }
 
@@ -298,16 +331,72 @@ main section {
     box-sizing: border-box;
 }
 
-.picture{
+.picture {
     width: 20%;
     height: 20%;
 }
-h3{
+
+h3 {
     color: #0080d4;
 }
-.close{
+
+.close {
     height: 30px;
     background-color: #0080d4;
     color: white;
 }
 
+#change{
+    text-align: center;
+
+}
+
+select::-ms-expand {
+
+}
+#change select{
+
+	margin-bottom: 20px;
+	padding: 7px 30px 7px 10px;
+	font-size: 93%;
+	line-height: 1.1em;
+	border-radius: 5px;
+	border: none;
+	background-image: url(./images/icon_arrow.svg);
+	background-repeat: no-repeat;
+	background-size: 12px 10px;
+	background-position: right 10px center;
+	background-color: #bddfff;
+}
+#change #high{
+background-color:#ff9e9e;
+}
+#change #middle{
+background-color:#ffff9e;
+}
+#change #suki{
+background-color:#9eceff;
+}
+
+
+
+
+@media all and (min-width:768px) {
+
+    /*幅768px以下で適応されるCSS*/
+/*
+    #t{
+        background-color: red;
+    }
+*/
+    .subject{
+        height: 90px;
+        padding: 0.5rem 2rem;
+        margin-top: 0;
+    }
+    #trident_map {
+
+        margin-top: 10px;
+
+}
+}

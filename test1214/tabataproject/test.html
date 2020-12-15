@@ -1,0 +1,31 @@
+<select name="kouza">
+	<option value="">コース</option>
+	<option value="ゲーム開発">Aゲーム開発</option>
+	<option value="CG">B　CG</option>
+	<option value="Ｗebデザイン">Ｗebデザイン</option>
+<select>
+<select name="kouza2">
+</select>
+
+<script>
+let versionArray = new Array();
+versionArray[''] = new Array('講座');
+versionArray['ゲーム開発'] = new Array('A', 'B', 'C', 'D', '8.1', '10');
+versionArray['Android'] = new Array('7 (Nougat)', '8 (Oreo)', '9 (Pie)', '10');
+versionArray['iOS'] = new Array('10以下', '11', '12', '13');
+
+document.getElementsByName('kouza')[0].onchange = function () {
+	let os = this.value;
+	let elm = document.getElementsByName('kouza2')[0];
+	elm.options.length = 0;
+	for (let i = 0; i < versionArray[os].length; i++) {
+		let op = document.createElement('option');
+		op.value = versionArray[os][i];
+		op.textContent = versionArray[os][i];
+		elm.appendChild(op);
+	}
+};
+window.onload = function () {
+	document.getElementsByName('kouza')[0].onchange();
+};
+</script>
