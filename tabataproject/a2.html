@@ -8,22 +8,33 @@
 </head>
 
 <body>
-    <form action=https://docs.google.com/forms/u/0/d/e/1FAIpQLSfs5s5OJr9PKBXWjpxQHDvQRsb6xfLyoxv8HMoAd_pjUov6Og/formResponse>
+    <form>
         <div class="box2">
             <span class="box-title">個人情報入力欄</span>
-            <p class="cen">学校名：<input type="text" name="entry.1791932330"></p>
-            <p class="cen">学科：<input type="text" name="entry.1762081743"></p>
-            <p class="cen">学年：
-                <input id="gakunen" type="radio" name="entry.47586721">１年
-                <input id="gakunen2" type="radio" name="entry.47586721">２年
-                <input id="gakunen3" type="radio" name="entry.47586721">３年
-            </p>
-            <p class="cen">性別：
-                <input id="seibetu" type="radio" name="entry.641755591" value="男性">男性
-                <input id="seibetu" type="radio" name="entry.641755591" value="女性">女性
-            </p>
-            <p class="cen">郵便番号：<input type="text" name="entry.530668767"></p>
-            <p class="cen">住所：<textarea cols="50" rows="5" name="entry.133107222"></textarea></p>
+
+            <p class="gaku">学校名：<input type="text" name="entry.1791932330"></p><br>
+            <p class="gaku">学科：<input type="text" name="entry.1762081743"></p><br>
+            <div class="radio">
+                <p class="gaku">学年：
+                    <input id="radio1" name="radio" type="radio">
+                    <label for="radio1" class="radio-label">1年</label>
+                    <input id="radio2" type="radio" name="radio" 　name="radio">
+                    <label for="radio2" class="radio-label">2年</label>
+                    <input id="radio3" type="radio" name="radio" name="radio">
+                    <label for="radio3" class="radio-label">3年</label>
+                </p><br>
+
+                <p class="sei">性別：
+                    <input id="radio4" name="radio" type="radio" value="男性">
+                    <label for="radio4" class="radio-label">男性</label>
+                    <input id="radio5" name="radio" type="radio" value="女性">
+                    <label for="radio5" class="radio-label">女性</label>
+                </p>
+            </div>
+
+            <p class="sumu">郵便番号：<input type="text" class="sum" name="entry.530668767"></p><br>
+            <p class="sumu">住所：<input type="text" size="70" name="entry.133107222"></p>
+
         </div>
         <div class="box2">
             <span class="box-title">参加した講座にチェックを入れてください</span>
@@ -114,7 +125,7 @@
                 <p>C一番印象に残った講座と感想をお聞かせください。</p>
             </span>
 
-            <select name="kouza">
+            <select name="kouza" class="same-width-list">
                 <option value="">コース</option>
                 <option value="ゲーム開発">ゲーム開発</option>
                 <option value="CG">CG</option>
@@ -122,10 +133,12 @@
                 <option value="CAD">CAD</option>
                 <option value="情報処理">情報処理</option>
                 <select>
-                    <select name="kouza2">
+                    <select name="kouza2" class="same-width-list2">
                     </select>
                 </select>
             </select>
+            <br>
+
             <script>
                 let versionArray = new Array();
                 versionArray[''] = new Array('講座');
@@ -178,20 +191,19 @@
 
             </script>
             <br>
-            感想をお聞かせください。<textarea cols="50" rows="5" name="entry.133107222"></textarea>
-        </div>
-        <div class="box2">
-            <span class="box-title">
-                <p>D.トライデントをはじめに知ったきっかけは？</p>
-            </span>
+            感想をお聞かせください。
+            <br>
+            <input type="text" class="kansou" name="entry.133107222">
+            <p class="D">D.トライデントをはじめに知ったきっかけは？</p>
 
-            <select name="sinro">
+
+            <select name="sinro" class="same-width-list">
                 <option value="">選択</option>
                 <option value="紹介">紹介</option>
                 <option value="インターネット">インターネット</option>
                 <option value="その他"> その他</option>
                 <select>
-                    <select name="sinro2">
+                    <select name="sinro2" class="same-width-list2">
                     </select>
                 </select>
             </select>
@@ -199,6 +211,7 @@
             <script>
                 let versionArray2 = new Array();
                 versionArray2[''] = new Array('進路');
+//                配列化
 
                 versionArray2['紹介'] = new Array(
                     '１ 親・兄弟・親戚がトライデント生',
@@ -278,31 +291,45 @@
             <label for="C12" class="checkbox03">情報処理試験対策セミナー<br></label>
             <input type="checkbox" id="C13" name="checkbox03">
             <label for="C13" class="checkbox03">イベント<br></label>
-            <input type="checkbox" id="C14" name="checkbox03">
-            <label for="C14" class="checkbox03">その他<br></label>
+            <input type="checkbox" id="C14" name="checkbox03" onclick="connecttext('textforscb3',this.checked);">
+            <label for="C14" class="checkbox03">その他<br></label><!--            //scriptとつながっている-->
+            <input type="text" name="othertext" id="textforscb3" value="">
+            <script>
+                function connecttext(textid, ischecked) {
+                    if (ischecked == true) {
+                        // チェックが入っていたら有効化
+                        document.getElementById(textid).disabled = false;
+                    } else {
+                        // チェックが入っていなかったら無効化
+                        document.getElementById(textid).disabled = true;
+                    }
+                }
+
+            </script>
         </div>
-        <div class="box2">
+        <div class="box2"> <!--           CSS box2-->
             <span class="box-title">
                 <p>F.検討中の進路は何ですか？</p>
             </span>
             <div class="radio">
                 <input id="radio-1" name="radio" type="radio">
-                <label for="radio-1" class="radio-label">コンピュータ専門学校</label>
+                <label for="radio-1" class="radio-label"></label>コンピュータ専門学校
                 <input id="radio-2" name="radio" type="radio">
-                <label for="radio-2" class="radio-label">その他の分野の専門学校</label>
+                <label for="radio-2" class="radio-label"></label>その他の分野の専門学校
                 <input id="radio-3" name="radio" type="radio">
-                <label for="radio-3" class="radio-label">就職</label>
+                <label for="radio-3" class="radio-label"></label>就職
                 <input id="radio-4" name="radio" type="radio">
-                <label for="radio-4" class="radio-label">大学</label>
+                <label for="radio-4" class="radio-label"></label>大学
                 <input id="radio-5" name="radio" type="radio">
-                <label for="radio-5" class="radio-label">短大</label>
+                <label for="radio-5" class="radio-label"></label>短大
                 <input id="radio-6" name="radio" type="radio">
-                <label for="radio-6" class="radio-label">その他</label>
+                <label for="radio-6" class="radio-label"></label>その他
+
             </div>
         </div>
 
 
-        <div class="box2">
+        <div class="box2"><!--           CSS box2-->
             <span class="box-title">
                 <p>G.本校以外に参加予定または、参加したことがある学校があれば、記入してください</p>
             </span>
