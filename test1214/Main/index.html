@@ -29,227 +29,60 @@
             </div>
         </div>
 
-        <h1 id="t">トライデントオープンキャンパスアプリ</h1>
+        <h1 id="t">管理者用画面</h1>
 
     </header>
 
 </div>
 
+
+
 <body>
+   <div id="change">
+    <select name=”subject” id="subject">
+       <option value=”web”>Web</option>
+        <option value=”game”>GAME</option>
+        <option value=”vr”>VR・Vtuber</option>
+        <option value=”it”>IT</option>
+        <option value=”cad”>CAD</option>
+        <option value=”cg”>CG</option>
+
+    </select>
+
+    <button id="high">混んでる</button>
+    <button id="middle">通常</button>
+    <button id="suki">空いてる</button>
+
+</div>
 
 
 
-    <table border="1" id="table1">
-        <tr>
-            <td id="td1">混雑</td>
-            <td style="font-size: 20px;">他の学科から回ることを推奨します</td>
-        </tr>
 
-        <tr>
-            <td id="td2">普通</td>
-            <td style="font-size: 20px">場合によっては混雑するかもしれません</td>
-        </tr>
-
-        <tr>
-            <td id="td3">空き</td>
-            <td style="font-size: 20px">空いています</td>
-        </tr>
-
-    </table>
 
     <div id="trident_map">
-        <b>
-            <p style="text-align: center;">学科をタップすると各学科の説明が表示されます</p>
-        </b>
+
 
 
 
         <div class="floor">
-
-            <label for="web">7F </label>
-
-            <button id="web" class="subject">Webデザイン学科
-
-               <div>
-                   <img src="image/settei.png" alt="画像" class="haguruma" id="web_h">
-               </div>
-
-                <div>
-                    <button>混み</button>
-                    <button>普通</button>
-                    <button>空き</button>
-                </div>
-            </button>
-
+            <label for="web">7F </label><button id="web" class="subject">Webデザイン学科</button>
         </div>
 
         <div class="floor">
-            <label for="game">5F </label><button id="game" class="subject">ゲームサイエンス学科
-                <img src="image/settei.png" alt="画像" class="haguruma" id="game_h"></button>
-            <button id="vr" class="subject">VRゲーム・Vtuber体験
-                <img src="image/settei.png" alt="画像" class="haguruma" id="vr_h"></button>
+            <label for="game">5F </label><button id="game" class="subject">ゲームサイエンス学科</button>
+            <button id="vr" class="subject">VRゲーム・Vtuber体験</button>
         </div>
 
         <div class="floor">
             <label for="it">4F </label>
-            <button id="it" class="subject">F44<br>情報系学科
-                <img src="image/settei.png" alt="画像" class="haguruma" id="it_h"></button>
-            <button id="cad" class="subject">CAD学科
-                <img src="image/settei.png" alt="画像" class="haguruma" id="cad_h"></button><br>
+            <button id="it" class="subject">F44<br>情報系学科</button>
+            <button id="cad" class="subject">CAD学科</button><br>
         </div>
 
         <div class="floor">
-            <label for="cg">B1F </label><button id="cg" class="subject">CGスペシャリスト学科
-                <img src="image/settei.png" alt="画像" class="haguruma" id="cg_h"></button>
+            <label for="cg">B1F </label><button id="cg" class="subject">CGスペシャリスト学科</button>
         </div>
     </div>
-
-    <!--  学科紹介のダイアログ-->
-    <div class="container_web">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <img src="image/patora4.jpg" alt="画像" id="web_picture" class="picture">
-
-            <h3>講座①自分だけのWebサイトを作ろう</h3>
-            <p>Webサイトの仕組みを学びながら、スマートフォンにも対応した簡単なページを作ってみよう！<br>スタッフが優しく丁寧に教えてくれるので安心です！</p>
-
-            <h3>講座②最新のWeb技術を体験しよう</h3>
-            <p>3DやVRや音声認識など、最新技術を使ったWebサイトやゲームを体験できます！<br>友達と競い合って、楽しくWebの世界を覗いてみよう！</p>
-
-            <h3>講座③オリジナルのロゴマークをデザインしよう</h3>
-            <p>プロも使用するソフトを使ってロゴマークを作ってみよう！<br>デザインが苦手でも楽しく体験できます！</p>
-
-            <button class="close">CLOSE</button>
-        </div>
-    </div>
-
-
-    <div class="container_game">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <img src="image/patora2.jpg" alt="画像" id="game_picture" class="picture">
-
-            <h3>講座①必殺技を作ろう「格闘ゲーム」</h3>
-            <p>放て！必殺技！自分だけのコマンドパターンを考えて、オリジナル必殺技を作って遊ぼう。</p>
-
-            <h3>講座②プロと同じ開発環境を使ってみよう！</h3>
-            <p>ニンテンドー3DSのゲームを開発してみよう。<br>
-                どんなゲームができるかはお楽しみ...</p>
-
-            <h3>講座③あなたもつくろうスマートフォンゲーム</h3>
-            <p>スマートフォンのゲームはどうやって創られているんだろう？<br>
-                疑問に思ったらLet's Challenge!!</p>
-
-            <h3>講座④ツクッて遊ぼう「オリジナルRPG」</h3>
-            <p>さあ、今年もキミだけのオリジナルＲＰＧをツクろう！<br>
-                できあがったゲームデータはキミのもの。<br>
-                持参すれば続きから作成できるぞ!!</p>
-
-            <h3>講座⑤学生制作ゲーム「試遊コーナー」</h3>
-            <p>卒業生・在校生が制作したゲー ムで遊ぼう!!<br>
-                コンテスト受賞作品をはじめ学生が制作したゲームを試遊できるよ。</p>
-
-
-
-            <button class="close">CLOSE</button>
-        </div>
-    </div>
-
-    <div class="container_vr">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <img src="image/patora10.jpg" alt="画像" id="vr_picture" class="picture">
-
-            <h3>講座①VRゲーム体験</h3>
-            <p>360度全方向を取り囲むゲームの世界を体験しよう！<br>
-                バーチャルキャスト(<a href="https://virtualcast.jp" style="color: blue;display: inline">https://virtualcast.jp</a>)を 使ったVtuber体験もできるよ。</p>
-
-
-
-            <button class="close">CLOSE</button>
-        </div>
-    </div>
-
-    <div class="container_it">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <img src="image/patora1.jpg" alt="画像" id="it_picture" class="picture">
-
-            <h3>講座①スマートフォンアプリ・Webアプリ開発を体験しよう</h3>
-            <p>プログラムを入力しながらアプリを作成！このコーナーを体験すれば、スマートフォンアプリやWebアプリの仕組みがよく分かります！</p>
-
-            <h3>講座②やってみよう！AI体験</h3>
-            <p>あなたが描いた絵を人工知能（AI）が判定！<br>上手に描けなくても人工知能は理解してくれますよ！</p>
-
-            <h3>講座③ネットワークセキュリティを体験しよう</h3>
-            <p>あなたが使っているパスワードは大丈夫！？知らない間にパソコン上の情報が漏れていませんか？<br>このコーナーではネットワークを通じての不正アクセス体験などができます</p>
-
-            <h3>講座④学生制作アプリ体験コーナー</h3>
-            <p>情報系4学科の卒業生・在校生が制作したプログラム作品に触れてください。<br>コンテスト受賞したスマートフォンアプリもあります。</p>
-
-
-
-            <button class="close">CLOSE</button>
-        </div>
-    </div>
-
-    <div class="container_cad">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <img src="image/patora3.jpg" alt="画像" id="cad_picture" class="picture">
-
-            <h3>講座①「モノづくりの第一歩」これがCADだ！！≪制作編≫</h3>
-            <p>簡単モデリングを体験してみよう！</p>
-
-            <h3>講座②「モノづくりの第一歩」これがCADだ！！≪組立編≫</h3>
-            <p>パーツ同士をくっつけて、組立図を完成させよう！</p>
-
-
-
-            <button class="close">CLOSE</button>
-        </div>
-    </div>
-
-    <div class="container_cg">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <img src="image/patora5.jpg" alt="画像" id="cg_picture" class="picture">
-
-            <h3>講座①3DCG制作キャラクターを作ってみよう！！</h3>
-            <p>3DCGのキャラクターを作るのは難しい？ いやいや、3DCG制作の基本は意外と簡単。<br>論より証拠、3DCGソフトを使用して、簡単なキャラクターを作ってみよう。</p>
-
-            <h3>講座②CG彫刻ソフトでデジタルモデリング</h3>
-            <p>スカルプトツールというCG彫刻ソフトは、まるで粘土細工のように、立体形状を大きくも細かくも変形可能。<br>スカルプトモデリングを体験してみよう！</p>
-
-            <h3>講座③アニメーションを体験しよう！</h3>
-            <p>手描きの絵を2DCGアニメにしたり、3DCGソフトでアニメーションを付けてみよう。<br>絵やキャラクターが動くと感動！</p>
-
-            <h3>講座④「楽しく描こう！キャラクターイラスト</h3>
-            <p>パーツ同士をくっつけて、組立図を完成させよう！</p>
-
-            <h3>講座⑤楽しく造ろう！オリジナルキャラクターグッズ</h3>
-            <p>自分で描いたイラストで「オリジナル缶バッチ」を造ろう!!<br> 出来上がったグッズは、もちろん持ち帰りOK！友達に自慢する？友達の分も造っちゃう？<br>とにかく、みんなでワイワイ楽しもう！</p>
-
-            <h3>講座⑥本気でプロを目指す人、基礎を学びたい人集まれ！！</h3>
-            <p>デッサン、造形、着彩等、プロを目指す先輩たちと一緒に授業を体験できます。<br>まずはモノ作りの基礎から挑戦してみよう！！ <br>初心者から経験者まで、様々なモチーフを用意して待っています！</p>
-
-
-
-
-
-            <button class="close">CLOSE</button>
-        </div>
-    </div>
-
-
-
-
 
 
 
@@ -258,7 +91,7 @@
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var web_flag = 0;
+
 
         // ファイアベースをイニシャライズ
         firebase.initializeApp(firebaseConfig);
@@ -268,25 +101,30 @@
 
         const docRef = firestore.doc("subject/status");
 
+        const f7 = document.querySelector("#web");
+        console.log(f7.value);
+        const f5a = document.querySelector("#game");
+        console.log(f5a.value);
+        const f5b = document.querySelector("#vr");
+        console.log(f5b.value);
+        const f4a = document.querySelector("#it");
+        console.log(f4a.value);
+        const f4b = document.querySelector("#cad");
+        console.log(f4b.value);
+        const fb1 = document.querySelector("#cg");
+        console.log(fb1.value);
 
 
 
 
         var data = {
-            web: {
-                element: document.querySelector("#web"),
-                flg: 1
-            },
-            game: {
-                element: document.querySelector("#game"),
-                flg: 1
-            }
-            //vr: {document.querySelector("#vr"), var flg = 1}
-            //            it: document.querySelector("#it"),
-            //            cad: document.querySelector("#cad"),
-            //            cg: document.querySelector("#cg")
+            web: f7,
+            game: f5a,
+            vr: f5b,
+            it: f4a,
+            cad: f4b,
+            cg: fb1
         };
-
         getRealtimeUpdates = function() {
             docRef.onSnapshot(function(doc) {
                 if (doc && doc.exists) {
@@ -306,64 +144,75 @@
                                 color = "#9eceff";
                                 break;
                         }
-                        data[key]["element"].style.background = color;
+                        data[key].style.background = color;
                     }
                 }
             });
         }
 
-
         getRealtimeUpdates();
 
-
         jQuery(function() {
-            var container_web = $('.container_web'),
-                container_game = $('.container_game'),
-                container_vr = $('.container_vr'),
-                container_it = $('.container_it'),
-                container_cad = $('.container_cad'),
-                container_cg = $('.container_cg'),
-                overlay = $('.overlay'),
-                close = $('.close'),
-                web_h = $('.web_h');
+
+            const f7 = document.querySelector("#web");
+            const f5a = document.querySelector("#game");
+
+            const f5b = document.querySelector("#vr");
+
+            const f4a = document.querySelector("#it");
+
+            const f4b = document.querySelector("#cad");
+
+            const fb1 = document.querySelector("#cg");
 
 
 
 
-
-
-
-
-
-            document.getElementById("web_h").onclick = function() {
-
-                var high, middle, low;
-                high = document.createElement("button");
-                high.appendChild(document.createTextNode("混み"));
-                middle = document.createElement("button");
-                middle.appendChild(document.createTextNode("普通"));
-                low = document.createElement("button");
-                low.appendChild(document.createTextNode("空き"));
-
-
-                data["web"]["element"].insertBefore(high, data["web"].lastChild);
-                data["web"]["element"].insertBefore(middle, data["web"].lastChild);
-                data["web"]["element"].insertBefore(low, data["web"].lastChild);
-
-
-
-                //                var color = window.getComputedStyle(f7).backgroundColor;
-                //                if(color =="#ff9e9e"){
-                //                   f7.style.background = "#ffff9e";
-                //
-                //                }else if(color=="#ffff9e"){
-                //                    f7.style.background="#9eceff";
-                //                }else{
-                //                     f7.style.background="#ff9e9e";
-                //
-                //                }
-
+            document.getElementById("web").onclick = function() {
+                container_web.fadeIn();
             };
+
+            document.getElementById("game").onclick = function() {
+                container_game.fadeIn();
+            };
+
+            document.getElementById("vr").onclick = function() {
+                container_vr.fadeIn();
+            };
+
+            document.getElementById("it").onclick = function() {
+                container_it.fadeIn();
+            };
+
+            document.getElementById("cad").onclick = function() {
+                container_cad.fadeIn();
+            };
+            document.getElementById("cg").onclick = function() {
+                container_cg.fadeIn();
+            };
+
+            const high = document.querySelector("#high");
+            const middle = document.querySelector("#middle");
+            const suki = document.querySelector("#suki");
+
+            clickListener = function(e) {
+                var select = document.getElementById('subject'); //選択されている学科
+                console.log("statusChange...");
+                docRef.update({
+                    [select.value]: e.target.innerHTML //学科:込み具合
+                }).then(function() {
+                    console.log("SUCCESS!");
+                }).catch(function(error) {
+                    console.log("ERROR... :", error);
+                });
+            };
+
+
+            // saveButtonボタンが押されたら実行する処理
+
+            high.addEventListener("click", clickListener);
+            middle.addEventListener("click", clickListener);
+            suki.addEventListener("click", clickListener);
 
 
 

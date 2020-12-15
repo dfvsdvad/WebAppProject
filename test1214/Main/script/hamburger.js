@@ -7,7 +7,7 @@ function hamburger() {
     }
 
 
-    console.log(document.getElementById('td1').style.color);
+//    console.log(document.getElementById('td1').style.color);
 
     document.getElementById('target').addEventListener('click', function() {
       hamburger();
