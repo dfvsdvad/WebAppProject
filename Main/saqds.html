@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <meta name="Author" content="" />
+  <script type="text/javascript" src="script/firebaseImport.js"></script>
+</head>
+
+<body>
+
+  <script>
+    firebase.initializeApp(firebaseConfig);
+
+
+    var firestore = firebase.firestore();
+
+
+
+
+
+    //日付取得
+    var date = new Date();
+    var day = "" + date.getFullYear() + (date.getMonth() + 1) + date.getDate();
+
+    const docRef = firestore.collection('survey').doc("20201217");
+
+
+
+    docRef.set(
+
+      {
+        1005: {
+          name: "atuhsi",
+          age: 21
+        }
+      }, {merge: true}
+
+    ).then(function() {
+      console.log("SUCCESS!");
+    }).catch(function(error) {
+      console.log("ERROR... :", error);
+    });
+
+
+  </script>
+
+
+
+
+
+</body></html>
