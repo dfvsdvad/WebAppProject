@@ -346,36 +346,38 @@ h3 {
     color: white;
 }
 
-#change{
+#change {
     text-align: center;
 
 }
 
-select::-ms-expand {
+select::-ms-expand {}
 
-}
-#change select{
+#change select {
 
-	margin-bottom: 20px;
-	padding: 7px 30px 7px 10px;
-	font-size: 93%;
-	line-height: 1.1em;
-	border-radius: 5px;
-	border: none;
-	background-image: url(./images/icon_arrow.svg);
-	background-repeat: no-repeat;
-	background-size: 12px 10px;
-	background-position: right 10px center;
-	background-color: #bddfff;
+    margin-bottom: 20px;
+    padding: 7px 30px 7px 10px;
+    font-size: 93%;
+    line-height: 1.1em;
+    border-radius: 5px;
+    border: none;
+    background-image: url(./images/icon_arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 12px 10px;
+    background-position: right 10px center;
+    background-color: #bddfff;
 }
-#change #high{
-background-color:#ff9e9e;
+
+#change #high {
+    background-color: #ff9e9e;
 }
-#change #middle{
-background-color:#ffff9e;
+
+#change #middle {
+    background-color: #ffff9e;
 }
-#change #suki{
-background-color:#9eceff;
+
+#change #suki {
+    background-color: #9eceff;
 }
 
 
@@ -384,19 +386,32 @@ background-color:#9eceff;
 @media all and (min-width:768px) {
 
 
-/*
+    /*
     #t{
         background-color: red;
     }
 */
-    .subject{
+    .subject {
         height: 90px;
         padding: 0.5rem 2rem;
         margin-top: 0;
     }
+
     #trident_map {
 
         margin-top: 10px;
 
-}
+    }
+
+    .content > h3 {
+        font-size: 22px;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .content > p {
+        font-size: 17px;
+        -webkit-text-size-adjust: 100%;
+
+    }
+
 }
