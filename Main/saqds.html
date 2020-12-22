@@ -12,88 +12,11 @@
 
 
   <button id="button">送信</button>
-  <script>
-    //イニシャライズ
-    firebase.initializeApp(firebaseConfig);
-
-    var firestore = firebase.firestore();
-
-
-
-    function getDate() {
-      var d = new Date();
-      return "" + d.getFullYear() + (d.getMonth() + 1) + d.getDate();
-    }
-
-
-
-    //送信ボタンを押したら
-    clickListener = function(e) {
-
-      //何人目か(今日)？を取得
-      const docC = firestore.collection('count').doc(getDate());
-
-
-
-      docC.get().then(function(doc) {
-
-        //取得できた
-        if (doc.exists) {
-          c = doc.data()["count"];
-          //アンケートを格納  フィールド名は連番で入る
-          docRef.set({
-
-              [c]: {
-                name: "atuhsi",
-                age: 21
-              }
-
-            }, {
-              merge: true
-            }
-
-          ).then(function() {
-            console.log("SUCCESS!");
-            docC.set({
-
-              count: c+1
-
-
-            }, {
-              merge: true
-            }
-
-          )
-          }).catch(function(error) {
-            console.log("ERROR... :", error);
-          });
-
-
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-      }).catch(function(error) {
-        console.log("Error getting document:", error);
-      });
-
-
-
-
-      //アンケート格納場所→survey/今日の日付に格納される
-      const docRef = firestore.collection('survey').doc(getDate());
 
 
 
 
 
-    };
-  </script>
-
-
-  <script>
-    document.querySelector("#button").addEventListener("click", clickListener);
-  </script>
 
 
 

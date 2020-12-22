@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>トライデントOCアプリ</title>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!--firebaseに必要なスクリプトの読み込みとイニシャライズ  -->
+  <script type="text/javascript" src="Main/script/firebaseImport.js"></script>
+
+</head>
+
+<body>
+
+
+
+  <script>
+    // ファイアベースをイニシャライズ
+    firebase.initializeApp(firebaseConfig);
+
+
+    var firestore = firebase.firestore();
+
+    const docRef = firestore.collection("survey");
+
+    docRef.get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      for(x in doc.data()){
+        console.log(doc.data()[x])
+      }
+    });
+});
+
+
+  </script>
+
+
+
+
+</body></html>
