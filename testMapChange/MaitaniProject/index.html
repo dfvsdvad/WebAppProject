@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>トライデントOCアプリ</title>
+  <link rel="stylesheet" href="mapPage.css">
+  <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!--firebaseに必要なスクリプトの読み込みとイニシャライズ  -->
+  <script type="text/javascript" src="../firebaseImport.js"></script>
+
+</head>
+
+
+
+<!--ハンバーガーメニュー-->
+<div id="wrap">
+  <header class="pfix">
+    <nav class="nav" id="nav_f">
+      <ul>
+        <li>
+          <a href="OC_anke.html" class="list"><span style="border-bottom: solid 5px white;">アンケート入力画面</span></a>
+        </li>
+
+        <li>
+          <a href="../NakanoProject/ManagementPage.html" class="list"><span style="border-bottom: solid 5px white;">【スタッフ用】混雑状況入力</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="target">
+
+
+
+      <div class="target_inner">
+        <span class="target_inner_line target_inner_1" id="line1"></span>
+        <span class="target_inner_line target_inner_2" id="line2"></span>
+        <span class="target_inner_line target_inner_3" id="line3"></span>
+      </div>
+    </div>
+
+
+    <h1 id="t">トライデントオープンキャンパスアプリ</h1>
+
+  </header>
+</div>
+
+
+
+
+<body>
+
+
+<!--   混雑・普通・空き・を表示するテーブル-->
+  <table border="1" id="table1">
+    <tr>
+      <td id="td1">混雑</td>
+      <td style="font-size: 20px;">他の学科から回ることを推奨します</td>
+    </tr>
+
+    <tr>
+      <td id="td2">普通</td>
+      <td style="font-size: 20px">場合によっては混雑するかもしれません</td>
+    </tr>
+
+    <tr>
+      <td id="td3">空き</td>
+      <td style="font-size: 20px">空いています</td>
+    </tr>
+
+  </table>
+
+
+<!--マップ-->
+  <div id="trident_map">
+    <b>
+      <p style="text-align: center;">学科をタップすると各学科の説明が表示されます</p>
+    </b>
+
+    <div class="floor">
+      <label for="web">7F </label><button id="web" class="subject">Webデザイン学科</button>
+    </div>
+
+    <div class="floor">
+      <label for="game">5F </label><button id="game" class="subject">ゲームサイエンス学科</button>
+      <button id="vr" class="subject">VRゲーム・Vtuber体験</button>
+    </div>
+
+    <div class="floor">
+      <label for="it">4F </label>
+      <button id="it" class="subject">F44<br>情報系学科</button>
+      <button id="cad" class="subject">CAD学科</button><br>
+    </div>
+
+    <div class="floor">
+      <label for="cg">B1F </label><button id="cg" class="subject">CGスペシャリスト学科</button>
+    </div>
+  </div>
+
+
+
+  <script src="../hamburger.js"></script>
+
+
+  <script>
+
+    // ファイアベースをイニシャライズ
+    firebase.initializeApp(firebaseConfig);
+
+
+    var firestore = firebase.firestore();
+
+    const docRef = firestore.doc("subject/status");
+
+    var data = {
+      web: document.querySelector("#web"),
+      game: document.querySelector("#game"),
+      vr: document.querySelector("#vr"),
+      it: document.querySelector("#it"),
+      cad: document.querySelector("#cad"),
+      cg: document.querySelector("#cg")
+    };
+
+    getRealtimeUpdates = function() {
+      docRef.onSnapshot(function(doc) {
+        if (doc && doc.exists) {
+          const myData = doc.data();
+          for (var key in data) {
+            var zyoutai = myData["”" + key + "”"]; //クラウドのデータ抽出
+            console.log(zyoutai);
+            var color;
+            switch (zyoutai) {
+              case "混んでる":
+                color = "#ff9e9e";
+                break;
+              case "通常":
+                color = "#ffff9e";
+                break;
+              case "空いてる":
+                color = "#9eceff";
+                break;
+            }
+            data[key].style.background = color;//色の変更
+
+          }
+        }
+      });
+    }
+
+    getRealtimeUpdates();
+  </script>
+
+</body>
+
+
+
+
+</html>
