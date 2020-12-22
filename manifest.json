@@ -1,6 +1,6 @@
 {
-  "name"              : "Trident_OC_PWA",
-  "short_name"        : "TriPWA",
+  "name"              : "トライデント オープンキャンパスアプリ",
+  "short_name"        : "OC_App",
   "description"       : "トライデントコンピュータ専門学校のオープンキャンパスで使用するアプリ",
   "start_url"         : "/?pwa=1",
   "display"           : "standalone",
