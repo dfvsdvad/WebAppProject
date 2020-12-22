@@ -18,6 +18,7 @@
             <ul>
                 <li><a href="anketoPage/OC_anke.html" class="list"><span style="border-bottom: solid 5px white;">アンケート入力画面</span></a></li>
                 <li><a href="ManagementPage.html" class="list"><span style="border-bottom: solid 5px white;">【スタッフ用】混雑状況入力</span></a></li>
+                <li><a href="map_change.html" class="list"><span style="border-bottom: solid 5px white;">【スタッフ用】学内マップ編集</span></a></li>
 
             </ul>
         </nav>
@@ -254,7 +255,7 @@
 
 
         var firestore = firebase.firestore();
-        var subject_text{web: "Webデザイン学科",game:"ゲームサイエンス学科",vr:"VRゲーム・Vtuber体験",it:"情報系学科",cad:"CAD学科",cg:"CGスペシャリスト学科"};
+//        var subject_text{web: "Webデザイン学科",game:"ゲームサイエンス学科",vr:"VRゲーム・Vtuber体験",it:"情報系学科",cad:"CAD学科",cg:"CGスペシャリスト学科"};
 
         var setting = firestore.doc("subjectSetting/level");
         var d;
@@ -290,13 +291,7 @@
 
 
 
-        //        Object.keys(doc.data).forEach(function(key){
-        //            switch (doc.data){
-        //                case 'f8':
-        //                    const newBtn = Document.createElement("button");
-        //                    F8.appendChild(newBtn);
-        //            }
-        //        })
+
     </script>
 
     <script>
