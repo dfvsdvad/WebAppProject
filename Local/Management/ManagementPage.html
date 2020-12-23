@@ -119,6 +119,12 @@
             cad: f4b,
             cg: fb1
         };
+
+
+
+
+
+      //クラウドDBが変更されたとき
         getRealtimeUpdates = function() {
             docRef.onSnapshot(function(doc) {
                 if (doc && doc.exists) {
@@ -145,6 +151,8 @@
         }
 
         getRealtimeUpdates();
+
+
 
         jQuery(function() {
 
@@ -193,6 +201,10 @@
             const middle = document.querySelector("#middle");
             const suki = document.querySelector("#suki");
 
+
+
+
+
             clickListener = function(e) {
                 var select = document.getElementById('subject'); //選択されている学科
                 console.log("statusChange...");
@@ -215,6 +227,8 @@
 
 
         });
+
+
     </script>
 
 </body></html>
