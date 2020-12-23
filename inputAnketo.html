@@ -1,6 +1,6 @@
 <head>
-    <link rel="stylesheet" href="Local//anketoPage/sample.css">
-    <script type="text/javascript" src="script/firebaseImport.js"></script>
+  <link rel="stylesheet" href="Local//anketoPage/sample.css">
+  <script type="text/javascript" src="script/firebaseImport.js"></script>
 </head>
 <html>
 
@@ -36,6 +36,7 @@
       <p class="sumu">住所：<input type="text" size="70" id="home" value=""></p>
     </span>
   </div>
+
   <div class="box2">
     <div class="box-title">
       参加した講座にチェックを入れてください <span id="span2"></span>
@@ -326,19 +327,34 @@
     <textarea cols="50" rows="5" id="G3"></textarea>
   </div>
 
-
-
-
-
   <input type="button" value="ボタン" onclick="getfunction()" />
 
 
 
 
+
+
+
+
+
+
   <script>
+    //イニシャライズ
+    firebase.initializeApp(firebaseConfig);
+    var firestore = firebase.firestore();
+
+    const docSurvey = firestore.collection('survey').doc(getDate());
+
+
     function getDate() {
       var d = new Date();
       return "" + d.getFullYear() + (d.getMonth() + 1) + d.getDate();
+    }
+
+
+    function getTime() {
+      var d = new Date();
+      return "" + d.getTime();
     }
   </script>
 
@@ -346,210 +362,136 @@
   <script>
     var getfunction = function() {
 
-      //イニシャライズ
-      firebase.initializeApp(firebaseConfig);
-      var firestore = firebase.firestore();
+      var survey = firestore.collection('survey').doc(getDate());
 
-      const docSurvey = firestore.collection('survey').doc(getDate());
+      survey.set({
+        [getTime()]: {
+          name:document.getElementById("name").value
 
-
-
-
-
-
-      docSurvey.get().then(function(doc) {
-        if (doc.exists) { //取得できた
-          console.log("あった");
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("ドキュメントがない");
         }
-      }).catch(function(error) {
-        console.log("エラー:", error);
+      }, {
+        merge: true
       });
-
-
-
-      docC.get().then(function(doc) {
-
-
-        if (doc.exists) { //取得できた
-          c = doc.data()["count"];
-          //アンケートを格納  フィールド名は連番で入る
-          docRef.set({
-
-              [c]: {
-                name: "atuhsi",
-                age: 21
-              }
-
-            }, {
-              merge: true
-            }
-
-          ).then(function() {
-            console.log("SUCCESS!");
-            docC.set({
-
-                count: c + 1
-
-
-              }, {
-                merge: true
-              }
-
-            )
-          }).catch(function(error) {
-            console.log("ERROR... :", error);
-          });
-
-
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-      }).catch(function(error) {
-        console.log("Error getting document:", error);
-      });
-
-
-
-
-      //アンケート格納場所→survey/今日の日付に格納される
-      const docRef = firestore.collection('survey').doc(getDate());
-
-
-
-
+      //      const text0 = document.getElementById("name").value; //学校
+      //      document.getElementById("span2").textContent = text0;
+      //      console.log(text0);
+      //      const text1 = document.getElementById("school").value; //学校
+      //      document.getElementById("span2").textContent = text1;
+      //      console.log(text1);
+      //      const text2 = document.getElementById("class").value; //学科
+      //      document.getElementById("span2").textContent = text2;
+      //      console.log(text2);
+      //      const text3 = document.getElementById("leter").value; //郵便番号
+      //      document.getElementById("span2").textContent = text3;
+      //      console.log(text3);
+      //      const text4 = document.getElementById("home").value; //住所
+      //      document.getElementById("span2").textContent = text4;
+      //      console.log(text4);
+      //      const text04 = document.getElementById("sonota").value; //ラジオボタンのその他の処理
+      //      document.getElementById("span2").textContent = text04;
+      //      console.log(text04);
+      //      const str = document.getElementById("course").value; //Cのコース
+      //      document.getElementById("span2").textContent = str;
+      //      console.log(str);
+      //      const str2 = document.getElementById("kouza").value; //Cの講座名
+      //      document.getElementById("span2").textContent = str2;
+      //      console.log(str2);
+      //      const str3 = document.getElementById("orizin").value; //きっかけ
+      //      document.getElementById("span2").textContent = str3;
+      //      console.log(str3);
+      //      const str4 = document.getElementById("orizin2").value; //きっかけの詳細
+      //      document.getElementById("span2").textContent = str4;
+      //      console.log(str4);
+      //
+      //      const text5 = document.getElementById("kansou").value; //Cの感想
+      //      document.getElementById("span2").textContent = text5;
+      //      console.log(text5);
+      //      const text6 = document.getElementById("G1").value; //G.本校以外に参加予定または、参加したことがある学校があれば
+      //      document.getElementById("span2").textContent = text6;
+      //      console.log(text6);
+      //      const text7 = document.getElementById("G2").value; //G
+      //      document.getElementById("span2").textContent = text7;
+      //      console.log(text7);
+      //      const text8 = document.getElementById("G3").value; //G
+      //      document.getElementById("span2").textContent = text8;
+      //      console.log(text8);
+      //
+      //
+      //
+      //
+      //
+      //
+      //      const arr2 = [];
+      //      const color2 = document.getElementsByName("gakunen"); //学年
+      //
+      //      for (let i = 0; i < color2.length; i++) {
+      //        if (color2[i].checked) { //(color2[i].checked === true)と同じ
+      //          arr2.push(color2[i].value);
+      //        }
+      //      }
+      //      document.getElementById("span2").textContent = arr2;
+      //      console.log(arr2);
+      //
+      //      const arr3 = [];
+      //      const color3 = document.getElementsByName("gender"); //性別
+      //
+      //      for (let i = 0; i < color3.length; i++) {
+      //        if (color3[i].checked) { //(color2[i].checked === true)と同じ
+      //          arr3.push(color3[i].value);
+      //        }
+      //      }
+      //      document.getElementById("span2").textContent = arr2;
+      //      console.log(arr3);
+      //
+      //      const arr4 = [];
+      //      const color4 = document.getElementsByName("A"); //A,参加した講座にチェックを入れてください
+      //
+      //      for (let i = 0; i < color4.length; i++) {
+      //        if (color4[i].checked) { //(color2[i].checked === true)と同じ
+      //          arr4.push(color4[i].value);
+      //        }
+      //      }
+      //      document.getElementById("span2").textContent = arr2;
+      //      console.log(arr4);
+      //
+      //      const arr5 = [];
+      //      const color5 = document.getElementsByName("B"); //B、他に参加した講座
+      //
+      //      for (let i = 0; i < color5.length; i++) {
+      //        if (color5[i].checked) { //(color2[i].checked === true)と同じ
+      //          arr5.push(color5[i].value);
+      //        }
+      //      }
+      //      document.getElementById("span2").textContent = arr2;
+      //      console.log(arr5);
+      //
+      //      const arr6 = [];
+      //      const color6 = document.getElementsByName("E"); //E.本日のオープンキャンパスにご参加のきっかけは何ですか（複数回答可）
+      //
+      //      for (let i = 0; i < color6.length; i++) {
+      //        if (color6[i].checked) { //(color2[i].checked === true)と同じ
+      //          arr6.push(color6[i].value);
+      //        }
+      //      }
+      //      document.getElementById("span2").textContent = arr2;
+      //      console.log(arr6);
+      //
+      //      const arr7 = [];
+      //      const color7 = document.getElementsByName("F"); //F.検討中の進路は何ですか？
+      //
+      //      for (let i = 0; i < color7.length; i++) {
+      //        if (color7[i].checked) { //(color2[i].checked === true)と同じ
+      //          arr7.push(color7[i].value);
+      //        }
+      //      }
+      //      document.getElementById("span2").textContent = arr2;
+      //      console.log(arr7);
 
 
 
 
 
     };
-
-
-
-
-
-
-
-
-
-    const text0 = document.getElementById("name").value; //学校
-    document.getElementById("span2").textContent = text0;
-    console.log(text0);
-    const text1 = document.getElementById("school").value; //学校
-    document.getElementById("span2").textContent = text1;
-    console.log(text1);
-    const text2 = document.getElementById("class").value; //学科
-    document.getElementById("span2").textContent = text2;
-    console.log(text2);
-    const text3 = document.getElementById("leter").value; //郵便番号
-    document.getElementById("span2").textContent = text3;
-    console.log(text3);
-    const text4 = document.getElementById("home").value; //住所
-    document.getElementById("span2").textContent = text4;
-    console.log(text4);
-    const text04 = document.getElementById("sonota").value; //ラジオボタンのその他の処理
-    document.getElementById("span2").textContent = text04;
-    console.log(text04);
-    const str = document.getElementById("course").value; //Cのコース
-    document.getElementById("span2").textContent = str;
-    console.log(str);
-    const str2 = document.getElementById("kouza").value; //Cの講座名
-    document.getElementById("span2").textContent = str2;
-    console.log(str2);
-    const str3 = document.getElementById("orizin").value; //きっかけ
-    document.getElementById("span2").textContent = str3;
-    console.log(str3);
-    const str4 = document.getElementById("orizin2").value; //きっかけの詳細
-    document.getElementById("span2").textContent = str4;
-    console.log(str4);
-
-    const text5 = document.getElementById("kansou").value; //Cの感想
-    document.getElementById("span2").textContent = text5;
-    console.log(text5);
-    const text6 = document.getElementById("G1").value; //G.本校以外に参加予定または、参加したことがある学校があれば
-    document.getElementById("span2").textContent = text6;
-    console.log(text6);
-    const text7 = document.getElementById("G2").value; //G
-    document.getElementById("span2").textContent = text7;
-    console.log(text7);
-    const text8 = document.getElementById("G3").value; //G
-    document.getElementById("span2").textContent = text8;
-    console.log(text8);
-
-
-
-
-
-
-    const arr2 = [];
-    const color2 = document.getElementsByName("gakunen"); //学年
-
-    for (let i = 0; i < color2.length; i++) {
-      if (color2[i].checked) { //(color2[i].checked === true)と同じ
-        arr2.push(color2[i].value);
-      }
-    }
-    document.getElementById("span2").textContent = arr2;
-    console.log(arr2);
-
-    const arr3 = [];
-    const color3 = document.getElementsByName("gender"); //性別
-
-    for (let i = 0; i < color3.length; i++) {
-      if (color3[i].checked) { //(color2[i].checked === true)と同じ
-        arr3.push(color3[i].value);
-      }
-    }
-    document.getElementById("span2").textContent = arr2;
-    console.log(arr3);
-
-    const arr4 = [];
-    const color4 = document.getElementsByName("A"); //A,参加した講座にチェックを入れてください
-
-    for (let i = 0; i < color4.length; i++) {
-      if (color4[i].checked) { //(color2[i].checked === true)と同じ
-        arr4.push(color4[i].value);
-      }
-    }
-    document.getElementById("span2").textContent = arr2;
-    console.log(arr4);
-
-    const arr5 = [];
-    const color5 = document.getElementsByName("B"); //B、他に参加した講座
-
-    for (let i = 0; i < color5.length; i++) {
-      if (color5[i].checked) { //(color2[i].checked === true)と同じ
-        arr5.push(color5[i].value);
-      }
-    }
-    document.getElementById("span2").textContent = arr2;
-    console.log(arr5);
-
-    const arr6 = [];
-    const color6 = document.getElementsByName("E"); //E.本日のオープンキャンパスにご参加のきっかけは何ですか（複数回答可）
-
-    for (let i = 0; i < color6.length; i++) {
-      if (color6[i].checked) { //(color2[i].checked === true)と同じ
-        arr6.push(color6[i].value);
-      }
-    }
-    document.getElementById("span2").textContent = arr2;
-    console.log(arr6);
-
-    const arr7 = [];
-    const color7 = document.getElementsByName("F"); //F.検討中の進路は何ですか？
-
-    for (let i = 0; i < color7.length; i++) {
-      if (color7[i].checked) { //(color2[i].checked === true)と同じ
-        arr7.push(color7[i].value);
-      }
-    }
-    document.getElementById("span2").textContent = arr2;
-    console.log(arr7);
   </script>
 
 
