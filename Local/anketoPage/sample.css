@@ -1,3 +1,45 @@
+.tags1 {
+ position:relative;
+ border: 3px solid black; /* 枠の色はここを変更してください */
+ background-color: whitesmoke; /* 背景カラーです */
+ border-radius: 0px 0px 5px 5px;
+ margin-top: 3em; /* 各々の環境で数字を調節してください */
+}
+.tags1:after { /* 目次部分 */
+ position: absolute;
+ font-family: FontAwesome;
+ content: '\f03a 質問事項'; /* 表示名を変えたければここを変更 */
+ background: black;
+ color: #fff;
+ right: 0%;
+ left: 0%;
+ bottom: 100%;
+ border-radius: 5px 5px 0 0;
+ padding: 2px 0 2px 0;
+ margin: 0 -3px 0 -3px;/* -で指定しているところはborderと同じ数値にする */
+ text-align:center;
+ font-size: 1.2em;
+ letter-spacing: 2em
+ }
+.tags {
+ font-size:0.9em;
+ font-weight: bold;
+ color:black;
+}
+.tags{
+ color:black;
+ padding:8px 0;/* 列の間隔 */
+ display: block;
+ text-decoration: none;
+ transition-duration: 0.3s /* カーソルが戻る時間 */
+}
+.tags:hover {
+ padding-left: 9px; /* カーソル重ねた時に移動する距離 */
+ transition-duration: 0.3s /* カーソルが移動する時間 */
+}
+
+
+
 .box1 {
     padding: 0.5em 1em;
     margin: 2em 0;
@@ -174,4 +216,66 @@ input[type=checkbox]:checked + .checkbox03::after {
 
 .radio input[type="radio"] + .radio-label:empty:before {
     margin-right: 0;
+}
+/*トップページボタン*/
+.pagetop {
+
+    display: none;
+
+    position: fixed;
+
+    bottom: 40px;
+
+    right: 15px;
+
+}
+
+.pagetop a {
+
+    display: block;
+
+    background-color: #B3B3B3;
+
+
+    text-align: center;
+
+
+    color: black;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    padding: 5px 10px;
+
+    filter:alpha(opacity=50);
+
+    -moz-opacity: 0.5;
+
+    opacity: 0.5;
+
+}
+
+.pagetop a:hover {
+
+    display: block;
+
+    background-color: #b2d1fb;
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    padding:5px 10px;
+
+    filter:alpha(opacity=50);
+
+    -moz-opacity: 0.5;
+
+    opacity: 0.5;
+
 }
