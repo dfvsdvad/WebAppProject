@@ -3,4 +3,11 @@ th{
 }
 table{
   border: 1;
+/*  visibility: hidden;*/
 }
+
+#save{
+  pointer-events: none;
+  background: #ccc;
+}
+

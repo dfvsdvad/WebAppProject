@@ -6,6 +6,7 @@
   <title>トライデントOCアプリ</title>
 
 
+  <link rel="stylesheet" href="read.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <!--firebaseに必要なスクリプトの読み込みとイニシャライズ  -->
   <script type="text/javascript" src="script/firebaseImport.js"></script>
@@ -16,8 +17,8 @@
 </head>
 
 <body>
-  <input type="button" value="エクセルファイルとしてエクスポート" onclick="getfunction()" />
-
+  <input type="button" id="save" value="エクセルファイルとしてエクスポート" onclick="getfunction()" />
+  <p id="text">読み込み中</p>
 
 
   <script>
@@ -90,12 +91,12 @@
           tables[x].setAttribute("class", "table-to-export");
           document.body.appendChild(tables[x]);
           access(date[x], tables[x]);
-
         }
 
       })
 
     }
+
 
     function access(date, table) {
 
@@ -153,16 +154,39 @@
                 case "name":
                   listx.name = allField[infomation][key];
                   break;
+
                 case "school":
                   listx.school = allField[infomation][key];
                   break;
-                case "gakunen":
-                  listx.gakunen = allField[infomation][key];
-                  break;
+
                 case "class":
                   listx.class = allField[infomation][key];
                   break;
-                case ""
+
+                case "gakunen":
+                  listx.gakunen = allField[infomation][key];
+                  break;
+
+                case "gender":
+                  listx.gender = allField[infomation][key];
+                  break;
+
+                case "leter":
+                  listx.leter = allField[infomation][key];
+                  break;
+
+                case "home":
+                  listx.home = allField[infomation][key];
+                  break;
+                case "A":
+                  listx.A = allField[infomation][key];
+                  break;
+
+                case "B":
+                  listx.B = allField[infomation][key];
+                  break;
+
+
 
               }
 
@@ -171,11 +195,19 @@
 
           }
           document.getElementById(date).insertAdjacentHTML("beforeend",
-            `
-<tr>
-<td>${listx["name"]}</td>
-<td>${listx["school"]}</td>
-</tr>
+            `<tr>
+              <td>${listx["name"]}</td>
+              <td>${listx["school"]}</td>
+              <td>${listx["class"]}</td>
+              <td>${listx["gakunen"]}</td>
+              <td>${listx["gender"]}</td>
+              <td>${listx["leter"]}</td>
+              <td>${listx["home"]}</td>
+              <td>${listx["A"]}</td>
+              <td>${listx["B"]}</td>
+              <td>${listx[""]}</td>
+
+             </tr>
                                  `);
 
         } else {
@@ -183,10 +215,28 @@
           console.log("No such document!");
         }
       });
+
     }
 
 
 
+
+
+    var PassageID;
+    var textElement = document.getElementById("text");
+
+    var text = "読み込み中";
+
+    PassageID = setInterval("x()", 1000);
+
+    function x() {
+      console.log("dfshuishuf");
+      text = text + ".";
+      if (text == "読み込み中....") {
+        text = "読み込み中";
+      }
+      textElement.innerHTML = text;
+    }
 
     var date = []; //コレクション内のドキュメントID（日付）をすべて入れる
 
@@ -201,6 +251,16 @@
 
 
     getDate().then(setTable)
+
+
+
+    //時間で同期（不正確）
+    setTimeout(() => {
+      console.log("完了");
+      clearInterval(PassageID);
+      textElement.innerHTML = "完了";
+      document.getElementById("save").setAttribute("id", "OK");
+    }, 6000)
   </script>
 
 
