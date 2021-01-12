@@ -215,11 +215,8 @@
               }
 
             }
-
-
-          }
-          document.getElementById(date).insertAdjacentHTML("beforeend",
-            `<tr>
+            document.getElementById(date).insertAdjacentHTML("beforeend",
+              `<tr>
               <td>${listx["name"]}</td>
               <td>${listx["school"]}</td>
               <td>${listx["class"]}</td>
@@ -239,6 +236,9 @@
 
              </tr>
                                  `);
+
+          }
+
 
         } else {
           // doc.data() will be undefined in this case
@@ -291,9 +291,12 @@
       textElement.innerHTML = "完了";
       document.getElementById("save").setAttribute("id", "OK");
     }, 6000)
+
   </script>
 
 
 
 
-</body></html>
+</body>
+
+</html>
