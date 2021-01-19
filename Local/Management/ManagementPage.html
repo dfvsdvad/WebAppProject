@@ -83,13 +83,8 @@
 
 
   <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-
     // ファイアベースをイニシャライズ
     firebase.initializeApp(firebaseConfig);
-
 
     var firestore = firebase.firestore();
 
@@ -109,8 +104,6 @@
     console.log(fb1.value);
 
 
-
-
     var data = {
       web: f7,
       game: f5a,
@@ -119,9 +112,6 @@
       cad: f4b,
       cg: fb1
     };
-
-
-
 
 
     //クラウドDBが変更されたとき
@@ -154,6 +144,7 @@
 
 
 
+    //学科タップ時や込み具合変更時の処理のセット
     jQuery(function() {
 
       const f7 = document.querySelector("#web");
@@ -170,46 +161,17 @@
 
 
 
-
-      //            for(let x in data){
-      //
-      //            }
-      document.getElementById("web").onclick = function() {
-        container_web.fadeIn();
-      };
-
-      document.getElementById("game").onclick = function() {
-        container_game.fadeIn();
-      };
-
-      document.getElementById("vr").onclick = function() {
-        container_vr.fadeIn();
-      };
-
-      document.getElementById("it").onclick = function() {
-        container_it.fadeIn();
-      };
-
-      document.getElementById("cad").onclick = function() {
-        container_cad.fadeIn();
-      };
-      document.getElementById("cg").onclick = function() {
-        container_cg.fadeIn();
-      };
-
       const high = document.querySelector("#high");
       const middle = document.querySelector("#middle");
       const suki = document.querySelector("#suki");
 
 
-
-
-
+      //混み具合の更新
       clickListener = function(e) {
         var select = document.getElementById('subject'); //選択されている学科
         console.log("statusChange...");
         docRef.update({
-          [select.value]: e.target.innerHTML //学科:込み具合
+          [select.value]: e.target.innerHTML //学科:混み具合
         }).then(function() {
           console.log("SUCCESS!");
         }).catch(function(error) {
@@ -218,13 +180,10 @@
       };
 
 
-      // saveButtonボタンが押されたら実行する処理
-
+      // saveButtonボタンが押されたら実行する処理(リスナーをセット)
       high.addEventListener("click", clickListener);
       middle.addEventListener("click", clickListener);
       suki.addEventListener("click", clickListener);
-
-
 
     });
 
