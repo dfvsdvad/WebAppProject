@@ -22,7 +22,7 @@
 
 
   <script>
-    //エクセルファイルとしてにエクスポート
+    //エクセルファイルとしてエクスポート。　ボタンを押すと実行される
     var getfunction = function() {
 
       var wopts = {
@@ -35,6 +35,7 @@
         SheetNames: [],
         Sheets: {}
       };
+
 
       document.querySelectorAll('table.table-to-export').forEach(function(currentValue, index) {
         // sheet_to_workbook()の実装を参考に記述
@@ -62,9 +63,13 @@
       }), 'surveyList.xlsx');
     }
 
+    //保存してある日付を取得
     function getDate() {
       return new Promise((resolve, reject) => {
+
+        //コレクション取得
         const docRef = firestore.collection("survey");
+
 
         docRef.get().then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
@@ -79,6 +84,8 @@
     }
 
 
+
+    //読み込んだデータをhtmlのbodyタグの中にインする
     function setTable() {
 
       return new Promise((resolve, reject) => {
@@ -215,6 +222,7 @@
               }
 
             }
+
             document.getElementById(date).insertAdjacentHTML("beforeend",
               `<tr>
               <td>${listx["name"]}</td>
@@ -272,13 +280,11 @@
 
     var tables = {};
 
+
     // ファイアベースをイニシャライズ
     firebase.initializeApp(firebaseConfig);
 
-
-
     var firestore = firebase.firestore();
-
 
     getDate().then(setTable)
 
@@ -293,9 +299,6 @@
     }, 6000)
 
   </script>
-
-
-
 
 </body>
 
